@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://o6m2citjubjq"]
+[gd_scene load_steps=5 format=3 uid="uid://o6m2citjubjq"]
 
 [ext_resource type="Script" path="res://Scripts/gamescene.gd" id="1_ro2ly"]
+[ext_resource type="AudioStream" uid="uid://b33omyf38qxva" path="res://Assets/menu.mp3" id="2_rkgm8"]
+[ext_resource type="Texture2D" uid="uid://bk0ugw00wkduv" path="res://Assets/amiga.jpeg" id="3_jnpuh"]
 
 [sub_resource type="GDScript" id="GDScript_tmx4j"]
 script/source = "extends Label
@@ -85,6 +87,20 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 script = SubResource("GDScript_tmx4j")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rkgm8")
+autoplay = true
+
+[node name="Node2D" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 102.0
+offset_right = 1284.0
+offset_bottom = 1382.0
+scale = Vector2(0.414844, 0.400781)
+texture = ExtResource("3_jnpuh")
+expand_mode = 1
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
