@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://o6m2citjubjq"]
+[gd_scene load_steps=4 format=3 uid="uid://o6m2citjubjq"]
 
 [ext_resource type="Script" path="res://Scripts/gamescene.gd" id="1_ro2ly"]
 [ext_resource type="AudioStream" uid="uid://b33omyf38qxva" path="res://Assets/menu.mp3" id="2_rkgm8"]
-[ext_resource type="Texture2D" uid="uid://bk0ugw00wkduv" path="res://Assets/amiga.jpeg" id="3_jnpuh"]
 
 [sub_resource type="GDScript" id="GDScript_tmx4j"]
 script/source = "extends Label
@@ -92,15 +91,27 @@ script = SubResource("GDScript_tmx4j")
 stream = ExtResource("2_rkgm8")
 autoplay = true
 
-[node name="Node2D" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 102.0
-offset_right = 1284.0
-offset_bottom = 1382.0
-scale = Vector2(0.414844, 0.400781)
-texture = ExtResource("3_jnpuh")
-expand_mode = 1
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -313.0
+offset_right = 75.0
+offset_bottom = 313.0
+grow_vertical = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "0"
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
